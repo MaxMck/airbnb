@@ -4,7 +4,9 @@
 
 <% @apartments.each do |apartment| %>
   <ul style="list-style-type:none">
+  </br>
     <li><strong><%= apartment.title %></strong></li>
+    <li><%= image_tag apartment.picture.url(:medium) %></li>
     <li><%= apartment.city %>, <%= apartment.country %></li>
     <li>Description: <%= apartment.description %></li>
     <li>Price Per Night: <%= apartment.price_per_night %> €</li>
