@@ -1,43 +1,45 @@
-<h1><%= @apartment.title %></h1>
+<h1 class="text-center"><%= @apartment.title %></h1>
 
-<p>
-  <%= @apartment.main_picture %>
-</p>
+<div class="text-center">
+  <p>
+    <%= image_tag @apartment.picture.url(:medium) %>
+  </p>
 
-<p>
-  <strong>Country:</strong>
-  <%= @apartment.country %>
-</p>
+  <p>
+    <strong>Country:</strong>
+    <%= @apartment.country %>
+  </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @apartment.city %>
-</p>
+  <p>
+    <strong>City:</strong>
+    <%= @apartment.city %>
+  </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @apartment.address %>
-</p>
+  <p>
+    <strong>Address:</strong>
+    <%= @apartment.address %>
+  </p>
 
-<p>
-  <strong>Price per night:</strong>
-  <%= @apartment.price_per_night %>
-</p>
+  <p>
+    <strong>Price per night:</strong>
+    <%= @apartment.price_per_night %>
+  </p>
 
-<p>
-  <strong>Capacity:</strong>
-  <%= @apartment.capacity %>
-</p>
+  <p>
+    <strong>Capacity:</strong>
+    <%= @apartment.capacity %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @apartment.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @apartment.description %>
+  </p>
 
-<p>
-  <strong>Owner e-mail:</strong>
-  <%= @apartment.user.email %>
-</p>
+  <p>
+    <strong>Owner e-mail:</strong>
+    <%= @apartment.user.email %>
+  </p>
 
-<%= link_to 'Edit', edit_apartment_path(@apartment) %> |
-<%= link_to 'Back', apartments_path %>
+  <%= link_to 'Edit', edit_apartment_path(@apartment) %> |
+  <%= link_to 'Back', apartments_path %>
+</div>
