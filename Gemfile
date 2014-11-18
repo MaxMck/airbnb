@@ -40,7 +40,12 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
+gem 'figaro'
+
 gem 'bootstrap-sass', '~> 3.3.0'
 
 ruby '2.1.2'
 gem 'rails_12factor', group: :production
+
+gem 'aws-sdk'
+gem 'paperclip'
