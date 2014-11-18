@@ -1,2 +1,7 @@
-<h1>Apartments#edit</h1>
-<p>Find me in app/views/apartments/edit.html.erb</p>
+<h1>Edit Apartment '<%= @apartment.title %>'</h1>
+
+
+<%= render 'form' %>
+
+
+<%= link_to 'Back', apartments_path %>
