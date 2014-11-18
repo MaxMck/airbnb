@@ -1,2 +1,17 @@
-<h1>Apartments#index</h1>
-<p>Find me in app/views/apartments/index.html.erb</p>
+<h1>Welcome Home</h1>
+
+<h3>Discover our new apartments:</h3>
+
+<% @apartments.each do |apartment| %>
+  <ul style="list-style-type:none">
+    <li><strong><%= apartment.title %></strong></li>
+    <li><%= apartment.city %>, <%= apartment.country %></li>
+    <li>Description: <%= apartment.description %></li>
+    <li>Price Per Night: <%= apartment.price_per_night %> €</li>
+    <li><%= link_to 'Show', apartment %> <%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  </ul>
+<% end %>
+
+<br>
+
+<%= link_to 'Add an apartment', new_apartment_path %>
