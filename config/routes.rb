@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   get 'users/:id' => 'users#show', as: :user
 
-  root to: "home#index"
+  root to: "apartments#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
