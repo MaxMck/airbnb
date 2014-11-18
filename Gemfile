@@ -47,3 +47,6 @@ gem 'rails_12factor', group: :production
 
 gem 'figaro'
 # Needed for AWS
+
+gem 'aws-sdk'
+gem 'paperclip'
