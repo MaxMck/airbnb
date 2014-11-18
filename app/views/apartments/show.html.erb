@@ -36,8 +36,9 @@
   </p>
 
   <p>
-    <strong>Owner e-mail:</strong>
-    <%= @apartment.user.email %>
+    <strong>Owner:</strong>
+    <%= link_to user_path(@apartment.user.id) do %> <%= @apartment.user.first_name %> <%= @apartment.user.last_name %> <% end %>
+
   </p>
 
   <%= link_to 'Edit', edit_apartment_path(@apartment) %> |
