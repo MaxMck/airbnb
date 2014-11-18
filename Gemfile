@@ -44,3 +44,9 @@ gem 'bootstrap-sass', '~> 3.3.0'
 
 ruby '2.1.2'
 gem 'rails_12factor', group: :production
+
+gem 'figaro'
+# Needed for AWS
+
+gem 'aws-sdk'
+gem 'paperclip'
