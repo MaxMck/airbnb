@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :set_apartment, only: [:create, :new]
-
+  before_action :set_apartment, only: [:create, :new, :show]
+  before_action :set_booking, only: [:show]
 
   def index
   end
@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
   def create
     @booking = current_user.bookings.new(booking_params)
     if @booking.save
-      redirect_to user_booking_path(current_user.id, @booking.id)
+      redirect_to apartment_booking_path(@apartment.id, @booking.id)
     else
       render :new
     end
@@ -39,7 +39,7 @@ class BookingsController < ApplicationController
   end
 
   def set_booking
-    @booking = Booking.find(params[:booking_id])
+    @booking = Booking.find(params[:id])
   end
 
   def booking_params

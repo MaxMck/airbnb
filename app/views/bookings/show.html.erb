@@ -2,10 +2,48 @@
 
 
 <div class="text-center">
+  <p>
+    <%= image_tag @apartment.picture.url(:medium) %>
+  </p>
 
   <p>
-Wait a minute ..
+    <strong>Start Date:</strong>
+    <%= @booking.start_date %>
   </p>
+
+  <p>
+    <strong>End Date:</strong>
+    <%= @booking.end_date %>
+  </p>
+
+  <p>
+    <strong>Where: :</strong>
+    <%= @apartment.address %>, <%= @apartment.city %>, <%= @apartment.country %>
+  </p>
+
+
+  <p>
+    <strong>Price per night:</strong>
+    <%= @apartment.price_per_night %> €
+  </p>
+
+  <p>
+    <strong>Total Price:</strong>
+    <% price = @apartment.price_per_night * (@booking.end_date - @booking.start_date) %>
+    <%= price.to_i %> €
+  </p>
+
+  <p>
+    <strong>Capacity:</strong>
+    <%= @apartment.capacity %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @apartment.description %>
+  </p>
+
+
 
 <%= link_to 'Back', apartments_path %>
 

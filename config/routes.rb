@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 
   resources :apartments do
-    resources :bookings, only: [ :new, :create ]
+    resources :bookings, only: [ :new, :create, :show ]
   end
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   root to: "apartments#index"
 
   resources :users do
-    resources :bookings, except: [ :new, :create ]
+    resources :bookings, except: [ :new, :create, :show ]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
