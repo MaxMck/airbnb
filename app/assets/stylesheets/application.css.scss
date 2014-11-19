@@ -1,2 +1,9 @@
+$body-bg: #E9F2F9;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "navbar";
+
+body {
+  padding-top: 120px;
+}
