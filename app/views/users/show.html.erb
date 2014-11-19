@@ -3,8 +3,4 @@
 <br/>
 <h3>Description</h3>
 <p><%= current_user.description %> </p>
-<% if @user.picture == nil %>
-<p> <img src="http://www.clker.com/cliparts/L/5/v/9/Z/I/user-icon.svg"> </p>
-<% else %>
 <p><%= image_tag @user.picture.url(:medium) %></p>
-<% end %>
