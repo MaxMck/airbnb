@@ -55,4 +55,6 @@ gem 'omniauth-facebook'
 gem "better_errors", group: :development
 gem "binding_of_caller", group: :development
 
-# gem 'bootstrap_form'
+
+gem "letter_opener", group: :development
+
