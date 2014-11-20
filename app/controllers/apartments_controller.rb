@@ -4,7 +4,11 @@ class ApartmentsController < ApplicationController
   before_action :set_apartment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @apartments = Apartment.all
+    if params[:query]
+      @apartments = Apartment.search(params[:query])
+    else
+      @apartments = Apartment.all
+    end
   end
 
   def show

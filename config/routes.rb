@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get 'users/:id' => 'users#show', as: :user
 
-  root to: "apartments#index"
+  root to: "home#index"
 
   resources :users do
     resources :bookings, except: [ :new, :create, :show ]
