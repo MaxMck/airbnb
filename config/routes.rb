@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
 
   resources :apartments do
-    resources :bookings, only: [ :new, :create, :show ]
+    post '/bookings/confirm' => 'bookings#confirm', as: :confirm
+    resources :bookings, only: [ :new, :show, :create ]
   end
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }

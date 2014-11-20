@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :set_apartment, only: [:create, :new, :show]
-  before_action :set_booking, only: [:show]
+  before_action :set_apartment, only: [:create, :new, :show, :confirm]
+  before_action :set_booking, only: [:show ]
 
   def index
   end
@@ -12,6 +12,10 @@ class BookingsController < ApplicationController
     @booking = @apartment.bookings.new
   end
 
+  def confirm
+    @booking = current_user.bookings.new(booking_params)
+  end
+
   def create
     @booking = current_user.bookings.new(booking_params)
     if @booking.save
@@ -20,6 +24,7 @@ class BookingsController < ApplicationController
       render :new
     end
   end
+
 
   def edit
   end
