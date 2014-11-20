@@ -11,8 +11,8 @@
 <% @user.bookings.each do |booking| %>
   <ul style="list-style-type:none">
   </br>
-    <li><%= booking.start_date%></li>
-    <li><%= booking.end_date%></li>
-    <li><%= booking.apartment_id%></li>
+    <li>Start date: <%= booking.start_date%></li>
+    <li>End date: <%= booking.end_date%></li>
+    <li>Apartment title: <%= booking.apartment.title%></li>
   </ul>
 <% end %>
