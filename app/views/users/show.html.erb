@@ -1,27 +1,38 @@
-<h2><%= @user.first_name %> <%= @user.last_name %></h2>
-<p>Mon adresse email : <%= @user.email %></p>
-<br/>
-<h3>Description</h3>
-<p><%= @user.description %> </p>
-<p><%= image_tag @user.picture.url(:medium) %></p>
+<% if @user == current_user %>
 
-<br/>
-<h3>My Bookings</h3>
+  <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+  <p><strong>Mon adresse email:</strong> <%= @user.email %></p>
+  <br/>
+  <p><strong>Ma Description: </strong><%= @user.description %> </p>
+  <p><%= image_tag @user.picture.url(:medium) %></p>
 
-<% @user.bookings.each do |booking| %>
-  <ul style="list-style-type:none">
-  </br>
-    <li><%= booking.apartment.title%></li>
-    <li><%= image_tag booking.apartment.picture.url(:medium) %></li>
-    <li>City: <%= booking.apartment.city%>, <%= booking.apartment.country%></li>
-    <li>Start date: <%= booking.start_date%></li>
-    <li>End date: <%= booking.end_date%></li>
-    <li>Total Price: <% price = booking.apartment.price_per_night * (booking.end_date - booking.start_date) %>
-    <%= price.to_i %> €</li>
-    <li><% if booking.apartment_review != nil %>My review: <%= booking.apartment_review%><% end %></li>
-    <li> <%= link_to 'Show', apartment_booking_path(booking.apartment_id, booking.id) %><% if booking.apartment_review == nil %> | <%= link_to 'Add a review for this apartment', apartment_booking_path(booking.apartment_id, booking.id) %>
-      <% end %>
-    </li>
+  <br/>
+  <h3>My Bookings:</h3>
 
-  </ul>
+  <% @user.bookings.each do |booking| %>
+    <ul style="list-style-type:none">
+    </br>
+      <li><%= booking.apartment.title%></li>
+      <li><%= image_tag booking.apartment.picture.url(:medium) %></li>
+      <li>City: <%= booking.apartment.city%>, <%= booking.apartment.country%></li>
+      <li>Start date: <%= booking.start_date%></li>
+      <li>End date: <%= booking.end_date%></li>
+      <li>Total Price: <% price = booking.apartment.price_per_night * (booking.end_date - booking.start_date) %>
+      <%= price.to_i %> €</li>
+      <li><% if booking.apartment_review != nil %>My review: <%= booking.apartment_review%><% end %></li>
+      <li> <%= link_to 'Show', apartment_booking_path(booking.apartment_id, booking.id) %><% if booking.apartment_review == nil %> | <%= link_to 'Add a review for this apartment', apartment_booking_path(booking.apartment_id, booking.id) %>
+        <% end %>
+      </li>
+
+    </ul>
+  <% end %>
+
+<% else %>
+  <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+  <br/>
+  <p><%= image_tag @user.picture.url(:medium) %></p>
+  <p><strong>Adresse email:</strong> <%= @user.email %></p>
+   <p><strong>Description:</strong><%= @user.description %> </p>
 <% end %>
+
+
