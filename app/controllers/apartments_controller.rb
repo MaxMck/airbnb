@@ -9,9 +9,18 @@ class ApartmentsController < ApplicationController
     else
       @apartments = Apartment.all
     end
+
+    @markers = Gmaps4rails.build_markers(@apartments) do |apartment, marker|
+      marker.lat apartment.latitude
+      marker.lng apartment.longitude
+    end
   end
 
   def show
+    @markers = Gmaps4rails.build_markers(@apartment) do |apartment, marker|
+      marker.lat apartment.latitude
+      marker.lng apartment.longitude
+    end
   end
 
   def new
