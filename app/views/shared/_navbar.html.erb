@@ -1,0 +1,86 @@
+<navbar>
+<!-- [...] Bootstrap Navbar, 50 lines [...] -->
+
+
+  <nav class="navbar navbar-default navbar-fixed-top navbar-wagon" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <%= link_to apartments_path, class: "navbar-brand" do %>
+          <%= image_tag "logo.png", {id: "logo"} %>
+        <% end %>
+    </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+  <% if user_signed_in? %>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to destroy_user_session_path, {method: 'delete'} do %>
+              <i class="fa fa-envelope-o"></i>Sign out
+            <% end %>
+          </li>
+          <li class="dropdown">
+            <%= link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do %>
+            <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=square", {id: "profile-pic"} %>
+            <%= current_user.first_name %> <%= current_user.last_name %> <span class="caret"></span>
+            <% end %>
+
+            <ul class="dropdown-menu" role="menu">
+            <li>
+              <%= link_to user_path(current_user.id) do %>
+                <i class="fa fa-user"></i> My profile
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, {method: 'delete'} do %>
+                <i class="fa fa-home"></i> Sign Out
+              <% end %>
+            </li>
+          </ul>
+
+          </li>
+          <li>
+            <%= link_to "Add an apartment", new_apartment_path, {class: "btn", id: "nav-btn"}%>
+          </li>
+        </ul>
+
+
+  <% else %>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to new_user_registration_path do %>
+              <i class="fa fa-envelope-o"></i>Sign up
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_session_path do %>
+              <i class="fa fa-envelope-o"></i>Sign in
+            <% end %>
+          </li>
+          <li>
+            <%= link_to user_omniauth_authorize_path(:facebook) do %>
+              <i class="fa fa-envelope-o"></i>Sign in with Facebook
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "Add an apartment", new_apartment_path, {class: "btn", id: "nav-btn"}%>
+          </li>
+        </ul>
+
+  <% end %>
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+</navbar>
