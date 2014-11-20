@@ -4,3 +4,15 @@
 <h3>Description</h3>
 <p><%= @user.description %> </p>
 <p><%= image_tag @user.picture.url(:medium) %></p>
+
+<br/>
+<h3>My Bookings</h3>
+
+<% @user.bookings.each do |booking| %>
+  <ul style="list-style-type:none">
+  </br>
+    <li><%= booking.start_date%></li>
+    <li><%= booking.end_date%></li>
+    <li><%= booking.apartment_id%></li>
+  </ul>
+<% end %>
