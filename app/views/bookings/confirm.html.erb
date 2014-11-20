@@ -43,7 +43,7 @@
     <%= @apartment.description %>
   </p>
 
-<%= link_to 'Confirm',  apartment_bookings_path(@apartment.id, booking: {start_date: @booking.start_date, end_date: @booking.end_date}), method: :post %>
+<%= link_to 'Confirm',  apartment_bookings_path( @apartment.id, booking: {start_date: @booking.start_date, end_date: @booking.end_date, apartment_id: @apartment.id}), method: :post %>
 <br>
 <br>
 <%= link_to 'Back',  new_apartment_booking_path(@apartment.id) %>
