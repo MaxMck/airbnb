@@ -1,5 +1,4 @@
-<navbar>
-<!-- [...] Bootstrap Navbar, 50 lines [...] -->
+
 
 
   <nav class="navbar navbar-default navbar-fixed-top navbar-wagon" role="navigation">
@@ -32,7 +31,7 @@
           <li class="dropdown">
             <%= link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do %>
               <%= image_tag current_user.picture.url(:medium), {id: "profile-pic"} %>
-            <%= current_user.first_name %> <%= current_user.last_name %> <span class="caret"></span>
+              <%= current_user.first_name %> <%= current_user.last_name %> <span class="caret"></span>
             <% end %>
 
             <ul class="dropdown-menu" role="menu">
@@ -83,4 +82,3 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-</navbar>

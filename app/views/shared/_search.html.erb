@@ -1,15 +1,23 @@
-<%= form_tag(apartments_path, :method => "get", id: "search-form") do  %>
-  <%= text_field_tag :query, params[:query], placeholder: "Search a city" %>
-
+<div class="home_search text-center" >
+  <form action="/apartments" method="get" id="search-form", role="form" class="form-inline">
     <div class="field">
-    <%= label_tag :start_date %><br>
-    <%= date_field_tag :start_date, params[:start_date], placeholder: "Choose a start date" %>
-  </div>
-  <div class="field">
-    <%= label_tag :end_date %><br>
-    <%= date_field_tag :end_date, params[:end_date], placeholder: "Choose an end date" %>
-
-  <%= submit_tag "Search", :name => nil %>
-<% end %>
+      <label for="price_per_night">Maximum price:</label>
+      <input name="_method" type="hidden" value="put" />
+    </div>
 
 
+
+  <%= form_tag(apartments_path, :method => "get", id: "search-form", :role => "form", class: "form-inline") do %>
+    <%= text_field_tag :query, params[:query], placeholder: "Search a city" %>
+
+      <div class="field">
+      <%= label_tag :start_date %><br>
+      <%= date_field_tag :start_date, params[:start_date], placeholder: "Choose a start date" %>
+    </div>
+    <div class="field">
+      <%= label_tag :end_date %><br>
+      <%= date_field_tag :end_date, params[:end_date], placeholder: "Choose an end date" %>
+
+    <%= submit_tag "Search", :name => nil %>
+  <% end %>
+</div>
