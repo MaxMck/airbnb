@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :set_apartment, only: [:create, :new, :show, :confirm]
-  before_action :set_booking, only: [:show ]
+  before_action :set_apartment, only: [:create, :new, :show, :confirm, :addreview]
+  before_action :set_booking, only: [:show, :addreview, :update ]
 
   def index
   end
@@ -25,11 +25,18 @@ class BookingsController < ApplicationController
     end
   end
 
+  def addreview
+  end
+
   def edit
   end
 
   def update
-
+    if @booking.update(booking_params2)
+     redirect_to user_path(current_user.id)
+    else
+      render :addreview
+    end
   end
 
   def destroy
@@ -50,4 +57,7 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:start_date, :end_date, :apartment_id)
   end
 
+  def booking_params2
+    params.require(:booking).permit(:start_date, :end_date, :apartment_id, :apartment_review)
+  end
 end
