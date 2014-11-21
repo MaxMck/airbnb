@@ -20,7 +20,7 @@
       <li>Total Price: <% price = booking.apartment.price_per_night * (booking.end_date - booking.start_date) %>
       <%= price.to_i %> €</li>
       <li><% if booking.apartment_review != nil %>My review: <%= booking.apartment_review%><% end %></li>
-      <li> <%= link_to 'Show', apartment_booking_path(booking.apartment_id, booking.id) %><% if booking.apartment_review == nil %> | <%= link_to 'Add a review for this apartment', apartment_booking_path(booking.apartment_id, booking.id) %>
+      <li> <%= link_to 'Show', apartment_booking_path(booking.apartment_id, booking.id) %><% if booking.apartment_review == nil %> | <%= link_to 'Add a review for this apartment', apartment_addreview_path(booking.apartment_id, booking.id) %>
         <% end %>
       </li>
 

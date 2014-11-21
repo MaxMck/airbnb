@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :apartments do
     post '/bookings/confirm' => 'bookings#confirm', as: :confirm
+    get '/bookings/:id/addreview' => 'bookings#addreview', as: :addreview
     resources :bookings, only: [ :new, :show, :create ]
   end
 
