@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
@@ -60,3 +60,6 @@ gem "binding_of_caller", group: :development
 gem "mocha", group: :test
 
 gem "letter_opener", group: :development
+gem "geocoder"
+gem "gmaps4rails"
+gem "rails-assets-underscore"

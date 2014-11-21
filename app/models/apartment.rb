@@ -7,6 +7,9 @@ class Apartment < ActiveRecord::Base
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   before_validation(on: :create) do
     self.city = city.split.map(&:capitalize).join(' ') if attribute_present?("city")
     self.country = country.split.map(&:capitalize).join(' ') if attribute_present?("city")
