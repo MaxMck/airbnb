@@ -21,6 +21,7 @@ class ApartmentsController < ApplicationController
   def create
     @apartment = current_user.apartments.new(apartment_params)
     @apartment.save
+    flash[:notice] = "Your apartment has been created"
     redirect_to @apartment
   end
 

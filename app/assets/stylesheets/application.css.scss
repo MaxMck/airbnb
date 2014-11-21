@@ -1,10 +1,112 @@
-$body-bg: #E9F2F9;
+$body-bg: #e7ebe8;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "navbar";
 @bootstrap-slider;
 
+.home_search {
+  padding-top: 50px;
+}
+
 body {
-  padding-top: 120px;
+  padding-top: 80px;
+}
+
+.alert {
+  padding: 0px;
+  border: none;
+  margin: 0px;
+}
+
+.notice {
+  padding: 0px;
+  border: none;
+  margin: 0px;
+}
+
+
+#banner {
+  text-align: center;
+  background-image: url(http://s14.postimg.org/k58vphd01/beach_425167_1920.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat !important;
+  padding-top: 230px;
+  width:100%;
+}
+
+#banner h1 {
+  font-family: pacifico;
+  font-size: 80px;
+  color: white;
+  text-shadow: 0 0 20px rgba(0, 0, 0, .8);
+}
+
+#support p {
+  font-size: 25px;
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  text-shadow: 0 0 20px rgba(0, 0, 0, .8);
+}
+
+
+.btn-danger {
+  border:none;
+}
+
+.btn-lg, .btn-group-lg > .btn {
+  padding: 20px 26px;
+  font-size: 25px;
+  line-height: 1.33;
+  border-radius: 8px;
+}
+
+.espacement {
+  height: 80px;
+  background-image: url('images/KCa8KHY.png');
+}
+
+.container {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background-color: #e3eef8;
+  width: 100%;
+}
+
+.container div p {
+  color: white;
+  font-size: 20px;
+  font-family: montserrat;
+}
+
+#text_support {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.support {
+  border-radius: 10px;
+  border: 5px solid #0B4567;
+  height: 300px;
+  background-color: #02779E;
+  padding: 20px 20px 20px 20px;
+  margin: 20px 20px 20px 20px;
+}
+
+.container div h2 {
+  font-family: pacifico;
+  font-size: 50px;
+  margin-bottom: 60px;
+}
+
+.door {
+  margin-top: 70px;
+  background-image: url("images/door.gif");
+  background-position: 50% 0%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border: 5px solid #0B4567;
 }
