@@ -1,3 +1,7 @@
+<% content_for(:title) do %>
+  Airbnb | New Apartment
+<% end %>
+
 <%= form_for(@apartment, html: { multipart: true }) do |f| %>
   <% if @apartment.errors.any? %>
     <div id="error_explanation">

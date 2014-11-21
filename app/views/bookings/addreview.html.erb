@@ -1,3 +1,7 @@
+<% content_for(:title) do %>
+  Airbnb | Add Review for <%= @apartment.title %>
+<% end %>
+
 <h1>Add a review for the apartment <%= @apartment.title %></h1>
 
 <%= render 'form2' %>
